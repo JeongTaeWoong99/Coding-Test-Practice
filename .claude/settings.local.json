@@ -16,7 +16,8 @@
       "Bash(claude config set allowedTools Read)",
       "Read",
       "WebFetch(domain:www.acmicpc.net)",
-      "Bash(./test)"
+      "Bash(./test)",
+      "Bash(git push:*)"
     ]
   },
   "outputStyle": "korean-terminal"
