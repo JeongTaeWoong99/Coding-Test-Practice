@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(claude config set output_style korean-terminal)",
+      "Bash(claude config set --global output_style korean-terminal)",
+      "Bash(/output-style korean-terminal)",
+      "Bash(g++:*)",
+      "Bash(./state_demo)",
+      "Bash(dir)",
+      "Bash(dir:*)",
+      "Bash(claude config --help)",
+      "Bash(claude config list)",
+      "Bash(claude config set auto_approve_read true)",
+      "Bash(claude config set --global auto_approve_read true)",
+      "Bash(claude config get allowedTools)",
+      "Bash(claude config set allowedTools Read)",
+      "Read",
+      "WebFetch(domain:www.acmicpc.net)",
+      "Bash(./test)"
+    ]
+  },
+  "outputStyle": "korean-terminal"
+}
