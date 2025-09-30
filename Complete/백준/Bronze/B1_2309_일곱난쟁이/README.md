@@ -17,7 +17,8 @@
 ## 💡 풀이 방법
 
 1. **[Answer(Recursive).cpp](./Answer(Recursive).cpp)** - 순열 방식
-![img.png](img.png)![img_1.png](img_1.png)
+![image1.png](image1.png)
+![image0.png](image0.png)
    
         정렬 후, next_permutation을 사용하여 모든 순열을 생성.
 
@@ -36,4 +37,3 @@
         재귀 함수로 순열을 직접 구현하여 9명 중 7명을 선택.
 
         순열의 앞 7명의 합이 100인지 확인하는 방식.
-

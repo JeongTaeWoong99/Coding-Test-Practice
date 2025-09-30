@@ -166,8 +166,9 @@
     <None Include="백준\Bronze\B1_2309_일곱난쟁이\README.md" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="백준\Bronze\B1_2309_일곱난쟁이\img.png" />
-    <Content Include="백준\Bronze\B1_2309_일곱난쟁이\img_1.png" />
+    <Content Include="백준\Bronze\B1_2309_일곱난쟁이\image0.png" />
+    <Content Include="백준\Bronze\B1_2309_일곱난쟁이\image1.png" />
+    <Content Include="백준\Bronze\B1_2309_일곱난쟁이\image2.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
