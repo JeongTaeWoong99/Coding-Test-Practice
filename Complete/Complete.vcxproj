@@ -233,7 +233,6 @@
       <SDLCheck>true</SDLCheck>
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
-    <ClCompile Include="해커랭크\Easy\Easy30_Variable_Sized_Arrays(가변_크기_배열)\Answer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="백준\Bronze\B1_2309_일곱난쟁이\README.md" />
@@ -243,10 +242,6 @@
     <Content Include="백준\Bronze\B1_2309_일곱난쟁이\image1.png" />
     <Content Include="백준\Bronze\B1_2309_일곱난쟁이\image2.png" />
     <Content Include="백준\Gold\G3_16637_괄호추가하기\README.md" />
-    <Content Include="해커랭크\Easy\Easy30_Variable_Sized_Arrays(가변_크기_배열)\README.md" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="해커랭크\Medium\" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
