@@ -35,7 +35,7 @@ prev_permutation: 이전 순열 생성 (첫 번째면 false)
 
    앞 7명의 합이 100인 경우를 찾아 출력.
 
-2. **[Answer(Combination).cpp](./Answer(Combination).cpp)** - 조합 브루트 포스 방식 ⭐ 추천
+2. **[Answer(Combination).cpp](./Answer(Combination).cpp)** - 조합 브루트 포스 방식
 
    이중 반복문으로 제외할 2명을 찾는 방식.
 

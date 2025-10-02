@@ -154,9 +154,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <Folder Include="프로그래머스\" />
-  </ItemGroup>
-  <ItemGroup>
     <ClCompile Include="백준\Bronze\B1_2309_일곱난쟁이\Answer(Combination).cpp" />
     <ClCompile Include="백준\Bronze\B1_2309_일곱난쟁이\Answer(Permutation).cpp" />
     <ClCompile Include="백준\Bronze\B1_2309_일곱난쟁이\Answer(Recursive).cpp" />
@@ -236,6 +233,7 @@
       <SDLCheck>true</SDLCheck>
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
+    <ClCompile Include="프로그래머스\Easy\Easy30_Variable_Sized_Arrays(가변_크기_배열)\Answer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="백준\Bronze\B1_2309_일곱난쟁이\README.md" />
@@ -245,6 +243,7 @@
     <Content Include="백준\Bronze\B1_2309_일곱난쟁이\image1.png" />
     <Content Include="백준\Bronze\B1_2309_일곱난쟁이\image2.png" />
     <Content Include="백준\Gold\G3_16637_괄호추가하기\README.md" />
+    <Content Include="프로그래머스\Easy\Easy30_Variable_Sized_Arrays(가변_크기_배열)\README.md" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

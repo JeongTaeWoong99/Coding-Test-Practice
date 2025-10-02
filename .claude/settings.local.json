@@ -19,7 +19,9 @@
       "Bash(./test)",
       "Bash(git push:*)",
       "WebFetch(domain:github.com)",
-      "WebFetch(domain:raw.githubusercontent.com)"
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:www.hackerrank.com)",
+      "WebSearch"
     ]
   },
   "outputStyle": "korean-terminal"
