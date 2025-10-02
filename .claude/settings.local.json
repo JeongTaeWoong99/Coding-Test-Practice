@@ -23,7 +23,9 @@
       "WebFetch(domain:www.hackerrank.com)",
       "WebSearch",
       "Read(//c/**)",
-      "Bash(powershell:*)"
+      "Bash(powershell:*)",
+      "Bash(git ls-tree:*)",
+      "Bash(findstr:*)"
     ]
   },
   "outputStyle": "korean-terminal"

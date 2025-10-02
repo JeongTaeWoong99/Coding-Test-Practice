@@ -243,6 +243,9 @@
     <Content Include="백준\Bronze\B1_2309_일곱난쟁이\image2.png" />
     <Content Include="백준\Gold\G3_16637_괄호추가하기\README.md" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="해커 랭크\Medium\" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
