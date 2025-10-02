@@ -21,7 +21,9 @@
       "WebFetch(domain:github.com)",
       "WebFetch(domain:raw.githubusercontent.com)",
       "WebFetch(domain:www.hackerrank.com)",
-      "WebSearch"
+      "WebSearch",
+      "Read(//c/**)",
+      "Bash(powershell:*)"
     ]
   },
   "outputStyle": "korean-terminal"
