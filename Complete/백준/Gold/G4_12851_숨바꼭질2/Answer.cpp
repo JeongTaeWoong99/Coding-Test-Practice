@@ -19,7 +19,7 @@ int main()
         cout << "1";
         return 0;
     }
-
+    
     // 시작 위치 초기화
     visited[N] = 1; // 시작 위치
     pathNum[N] = 1; // 방법 수

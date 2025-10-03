@@ -196,6 +196,139 @@ echo -e "\xEF\xBB\xBF#include <bits/stdc++.h>" > filename.cpp
 - 🔸 코드 작성 전 인코딩 설정 확인
 
 ---
-📅 **마지막 업데이트**: 2025-01-01
+
+## 🔧 Visual Studio 프로젝트 파일 관리
+
+### ⚠️ 중요: 파일 생성 후 프로젝트 등록 필수!
+
+**문제 상황:**
+Claude Code로 파일(.cpp, .md 등)을 생성하면, 파일 시스템에는 생성되지만 Visual Studio/JetBrains Rider 솔루션 탐색기에 표시되지 않습니다.
+
+**원인:**
+Visual Studio C++ 프로젝트는 `.vcxproj` 파일에 모든 소스 파일 목록을 명시적으로 관리합니다. 파일 시스템에 파일이 있어도 프로젝트 파일에 등록되지 않으면 IDE에서 보이지 않습니다.
+
+### 📋 파일 생성 후 필수 작업 절차
+
+#### 1️⃣ 새 폴더/파일 생성 시
+```
+Complete/백준/Bronze/B2_10808_알파벳개수/
+├── Answer.cpp
+└── README.md
+```
+
+#### 2️⃣ Complete.vcxproj 파일 수정
+
+**프로젝트 파일 위치:**
+```
+C:\Users\ASUS\Desktop\Code\CoTe\Coding-Test-Practice\Complete\Complete.vcxproj
+```
+
+**수정 방법:**
+
+**📌 .cpp 파일 추가** - `<ItemGroup>` 내 `<ClCompile>` 섹션에 추가
+```xml
+<ItemGroup>
+  <ClCompile Include="백준\Bronze\B1_2309_일곱난쟁이\Answer(Combination).cpp" />
+  <ClCompile Include="백준\Bronze\B2_10808_알파벳개수\Answer.cpp" />  <!-- 새로 추가 -->
+  <ClCompile Include="백준\Gold\G4_12851_숨바꼭질2\Answer.cpp" />
+</ItemGroup>
+```
+
+**📌 README.md 파일 추가** - `<ItemGroup>` 내 `<None>` 섹션에 추가
+```xml
+<ItemGroup>
+  <None Include="백준\Bronze\B1_2309_일곱난쟁이\README.md" />
+  <None Include="백준\Bronze\B2_10808_알파벳개수\README.md" />  <!-- 새로 추가 -->
+</ItemGroup>
+```
+
+**📌 이미지 파일 추가** - `<ItemGroup>` 내 `<Content>` 섹션에 추가
+```xml
+<ItemGroup>
+  <Content Include="백준\Bronze\B1_2309_일곱난쟁이\image0.png" />
+</ItemGroup>
+```
+
+#### 3️⃣ 파일 타입별 태그 규칙
+
+| 파일 확장자 | XML 태그 | 용도 |
+|-----------|---------|------|
+| `.cpp` | `<ClCompile>` | C++ 소스 파일 (컴파일 대상) |
+| `.h`, `.hpp` | `<ClInclude>` | C++ 헤더 파일 |
+| `.md` | `<None>` | 문서 파일 (비컴파일) |
+| `.png`, `.jpg` | `<Content>` | 리소스 파일 |
+| `.txt` | `<Text>` | 텍스트 파일 |
+
+#### 4️⃣ 정렬 규칙
+
+✅ **알파벳 순서로 정렬**: 백준 → 해커랭크, Bronze → Gold
+
+✅ **티어별 정렬**: B1 → B2 → B3, G1 → G2 → G3
+
+✅ **문제 번호 순서**: 낮은 번호부터
+
+### 🤖 Claude Code 작업 시 자동화 가이드
+
+**파일 생성 작업 플로우:**
+
+1. **폴더 생성**
+   ```bash
+   powershell "New-Item -ItemType Directory -Path 'Complete\백준\Bronze\B2_문제명' -Force"
+   ```
+
+2. **파일 작성** (UTF-8 BOM 포함)
+   ```
+   Write tool 사용
+   - Answer.cpp
+   - README.md
+   ```
+
+3. **⚠️ 프로젝트 파일 업데이트 (필수!)**
+   ```
+   Edit tool로 Complete.vcxproj 수정
+   - <ClCompile> 섹션에 .cpp 추가
+   - <None> 섹션에 .md 추가
+   - 알파벳순으로 정렬 유지
+   ```
+
+4. **검증**
+   - Rider/Visual Studio에서 솔루션 탐색기 확인
+   - 새로 추가한 파일들이 표시되는지 확인
+
+### 🚨 주의사항
+
+❌ **하지 말아야 할 것:**
+- 프로젝트 파일 업데이트 없이 파일만 생성
+- XML 문법 오류 (닫는 태그 누락, 특수문자 이스케이프 등)
+- 중복 항목 추가
+
+✅ **반드시 해야 할 것:**
+- 파일 생성 직후 즉시 .vcxproj 업데이트
+- 상대 경로 사용 (백준\Bronze\...)
+- 백슬래시(\) 사용 (Windows 경로 규칙)
+- 알파벳순 정렬 유지
+
+### 💡 빠른 참조
+
+**Complete.vcxproj 파일 구조:**
+```xml
+<Project>
+  ...
+  <ItemGroup>
+    <ClCompile Include="..." />  <!-- .cpp 파일들 -->
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..." />       <!-- .md 파일들 -->
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..." />    <!-- 이미지 등 -->
+  </ItemGroup>
+  ...
+</Project>
+```
+
+---
+📅 **마지막 업데이트**: 2025-10-03
 🎯 **용도**: 코딩테스트 연습 및 알고리즘 문제 해결
 🌏 **인코딩**: UTF-8 BOM 지원으로 한글 주석 완벽 지원
+🔧 **프로젝트 관리**: .vcxproj 파일 자동 업데이트 필수
