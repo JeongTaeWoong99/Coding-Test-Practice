@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-const int  MAX = 200000; // N과 K의 최대는 100000 이지만, X 2 순간이동으로 인해 범위를 초과할 수 있기 때문에, 여유롭게 2배로 설정
+const int  MAX = 200000; // N과 K의 최대는 100000 이지만, X*2 순간이동으로 인해 범위를 초과할 수 있기 때문에, 여유롭게 2배로 설정
 
 int        visited[MAX+4]; // visited : 각 위치까지 도달하는 최소 시간 (1 이상은 방문 및 시간 기록, 0은 미방문)
 long long  pathNum[MAX+4]; // pathNum : 각 위치까지 최소 시간으로 도달하는 방법의 수
@@ -12,7 +12,7 @@ int main()
 {
     cin >> N >> K;
 
-    // 예외 처리
+    // 반례 
     if(N == K)
     {
         cout << "0" << '\n';

@@ -2,7 +2,7 @@
 using namespace std;
 
 int a[9]; 
-int n = 9, r = 7;
+int N = 9, r = 7;
 
 void Solve()
 {  
@@ -43,10 +43,10 @@ void Permutation(int n, int r, int depth)
 }
 int main()
 {
-    for(int i = 0; i < n; i++)
+    for(int i = 0; i < N; i++)
         cin >> a[i];
     
-    Permutation(n, r, 0);
+    Permutation(N, r, 0);
     
     return 0;
 }
