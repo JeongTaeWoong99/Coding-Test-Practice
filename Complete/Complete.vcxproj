@@ -164,12 +164,14 @@
     <ClCompile Include="백준\Gold\G4_13913_숨바꼭질4\Answer(성공 버전).cpp" />
     <ClCompile Include="백준\Gold\G4_13913_숨바꼭질4\Answer.cpp" />
     <ClCompile Include="해커 랭크\Easy\Easy30_Variable_Sized_Arrays(가변_크기_배열)\Answer.cpp" />
+    <ClCompile Include="해커 랭크\Medium\Medium35_Attribute_Parser(속성_파서)\Answer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="백준\Bronze\B1_2309_일곱난쟁이\README.md" />
     <None Include="백준\Bronze\B2_10808_알파벳개수\README.md" />
     <None Include="백준\Gold\G4_13913_숨바꼭질4\README.md" />
     <None Include="해커 랭크\Easy\Easy30_Variable_Sized_Arrays(가변_크기_배열)\README.md" />
+    <None Include="해커 랭크\Medium\Medium35_Attribute_Parser(속성_파서)\README.md" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="백준\Bronze\B1_2309_일곱난쟁이\image0.png" />
