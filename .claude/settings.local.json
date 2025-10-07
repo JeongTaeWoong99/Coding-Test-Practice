@@ -25,7 +25,8 @@
       "Read(//c/**)",
       "Bash(powershell:*)",
       "Bash(git ls-tree:*)",
-      "Bash(findstr:*)"
+      "Bash(findstr:*)",
+      "WebFetch(domain:solved.ac)"
     ]
   },
   "outputStyle": "korean-terminal"
