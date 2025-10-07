@@ -5,7 +5,7 @@ vector<int>  numVec;   // 수식에서 숫자들을 저장  (예 : "3+8*7-9*2"  
 vector<char> operVec;  // 수식에서 연산자들을 저장 (예 : "3+8*7-9*2"  → ['+', '*', '-', '*'])
 int          ret;      // 괄호를 추가했을 때 나올 수 있는 최댓값을 저장
 int          N;        // 수식의 길이
-string       s;        // 입력받은 수식 문자열
+string       originS;        // 입력받은 수식 문자열
 
 // 두 숫자 b, c를 연산자 a로 연산하는 함수
 // operation : 연산자 (+, -, *)(%는 현재 문제에서 사용 안함)
@@ -53,13 +53,13 @@ int main()
 
     // 입력 처리
     cin >> N; // 수식의 길이 (1 ≤ n ≤ 19, 홀수)
-    cin >> s; // 수식 문자열 (예: "3+8*7-9*2")
+    cin >> originS; // 수식 문자열 (예: "3+8*7-9*2")
 
     // 수식 파싱 : 숫자와 연산자 분리
     for(int i = 0; i < N; i++)
     {
-        if(i % 2 == 0) numVec.push_back(s[i] - '0'); // 짝수 인덱스 → 숫자 저장
-        else           operVec.push_back(s[i]);         // 홀수 인덱스 → 연산자 저장
+        if(i % 2 == 0) numVec.push_back(originS[i] - '0'); // 짝수 인덱스 → 숫자 저장
+        else           operVec.push_back(originS[i]);         // 홀수 인덱스 → 연산자 저장
     }
     
     // 재귀 탐색 시작: 첫 번째 숫자부터 시작
