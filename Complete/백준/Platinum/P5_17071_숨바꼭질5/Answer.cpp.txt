@@ -1,0 +1,90 @@
+﻿#include <bits/stdc++.h>
+using namespace std;
+
+const int MAX = 500000;                // 최대 좌표 범위 (0 ~ 500,000)
+
+int visited[2][MAX + 4];               // visited[홀짝][위치] = 해당 턴에 그 위치 방문 여부 (0: 짝수턴, 1: 홀수턴)
+int N, M, match;                       // N = 수빈이 시작위치, M = 동생 시작위치, match = 만났는지 여부
+int turn = 1;                          // 현재 턴 (초) 카운트
+
+int main()
+{
+    ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
+
+    cin >> N >> M;
+
+    // 반례(초기 위치가 같으면 0초 만에 만남)
+    if(N == M)
+    {
+        cout << 0 << "\n";
+        return 0;
+    }
+
+    // BFS 큐 초기화 및 수빈이의 시작 위치 방문 처리
+    queue<int> q;
+    visited[0][N] = 1;                 // 0번째 턴(짝수)에 N 위치 방문
+    q.push(N);
+
+    // 플러드필 알고리즘: 매 턴마다 동생과 수빈이가 함께 이동하면서 체크
+    while(!q.empty())
+    {
+        M += turn;                     // 동생은 매 턴 turn만큼 이동 (1, 2, 3, 4, ...)
+
+        // 동생이 범위를 벗어나면 더 이상 만날 수 없음
+        if(M > MAX)
+            break;
+
+        // 핵심: 동생의 현재 위치를 수빈이가 같은 턴의 홀짝에 이미 방문했다면 만날 수 있음
+        // (수빈이가 2초에 방문했고 동생이 4초에 방문하면, 수빈이는 왔다갔다하며 4초에도 그 위치에 있을 수 있음)
+        if(visited[turn % 2][M])
+        {
+            match = true;
+            break;
+        }
+
+        // 현재 턴의 모든 수빈이의 위치를 처리 (레벨별 BFS = 플러드필 색칠하기)
+        int qSize = q.size();
+        for(int i = 0; i < qSize; i++)
+        {
+            int x = q.front();
+            q.pop();
+
+            // 수빈이가 할 수 있는 3가지 행동 : x - 1, x + 1, x * 2
+            for(int nx : {x + 1, x - 1, x * 2})
+            {
+                // 범위를 벗어나거나 이미 현재 턴의 홀짝에 방문했다면 스킵
+                if(nx < 0 || nx > MAX || visited[turn % 2][nx]) continue;
+
+                // 다음 위치 방문 처리 (현재 턴의 홀짝에 기록 = 색칠하기)
+                visited[turn % 2][nx] = visited[(turn + 1) % 2][x] + 1;
+
+                // 동생의 현재 위치와 같다면 만남 성공
+                if(nx == M)
+                {
+                    match = 1;
+                    break;
+                }
+
+                // 다음 체크 넣기
+                q.push(nx);
+            }
+
+            // 나머지 체크 불필요 = 탈출
+            if(match)
+                break;
+        }
+
+        // 턴 진행 불필요 = 탈출
+        if(match)
+            break;
+
+        // 못만남 = 다음 턴으로 진행
+        turn++;
+    }
+
+    // 만남 성공 시 걸린 시간 출력, 실패 시 -1 출력
+    if(match) cout << turn << "\n";
+    else      cout << -1 << "\n";
+
+    return 0;
+}

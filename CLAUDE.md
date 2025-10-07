@@ -286,18 +286,19 @@ int main()
 
 <br>
 
-### 🎯 Complete 정리 작업 8단계 절차
+### 🎯 Complete 정리 작업 9단계 절차
 
 | 단계 | 작업 내용                                                                                                                              |
 |-----|------------------------------------------------------------------------------------------------------------------------------------|
 | **1️⃣ Test.cpp 확인** | 현재 Test.cpp에 작성된 코드 읽기<br>어떤 문제인지 파악 (주석, 변수명 등 참고)                                                                                |
 | **2️⃣ 문제 정보 확인** | 백준 문제라면: solved.ac API로 난이도 확인<br>WebSearch로 문제 상세 정보 검색<br>또는 사용자에게 문제 링크/번호 확인                                                   |
 | **3️⃣ 기존 형식 참고** | 최소 3개 이상의 기존 README.md 파일 읽기<br>폴더명 규칙 확인 (예: B2_10808_알파벳개수)<br>README.md 작성 형식 확인 (작성일, 문제 링크, 접근법 등)<br>코드 스타일 확인 (주석, 정렬 규칙 등) |
-| **4️⃣ 폴더/파일 생성** | `Complete/백준/{티어}_{문제번호}_{문제명}/`<br>├── `Answer.cpp` ← Test.cpp 코드 복사 (스타일 정리)<br>└── `README.md` ← 기존 형식과 동일하게 작성                 |
-| **5️⃣ Answer.cpp** | Test.cpp의 코드를 복사<br>UTF-8 BOM 포함<br>코딩 스타일 가이드에 맞게 정리                                                                              |
+| **4️⃣ 폴더/파일 생성** | `Complete/백준/{티어}_{문제번호}_{문제명}/`<br>├── `Answer.cpp.txt` ← Test.cpp 코드 복사 (스타일 정리)<br>└── `README.md` ← 기존 형식과 동일하게 작성                 |
+| **5️⃣ Answer.cpp.txt** | Test.cpp의 코드를 복사하여 `.cpp.txt` 확장자로 저장<br>UTF-8 BOM 포함<br>코딩 스타일 가이드에 맞게 정리<br>**⚠️ 주의: Complete 폴더는 `.cpp.txt` 확장자 사용** (컴파일 대상 제외)                                                                              |
 | **6️⃣ README.md** | **반드시 기존 README 파일들의 형식을 참고**<br>📅 작성일 / 🔗 문제 링크 / 🤔 접근법 / 💡 풀이 방법 / ⏱️ 시간복잡도 포함                                               |
-| **7️⃣ vcxproj 업데이트** | `<ClCompile>` 섹션에 Answer.cpp 추가<br>`<None>` 섹션에 README.md 추가<br>알파벳순으로 정렬 유지                                                       |
-| **8️⃣ 검증** | 모든 파일이 올바른 위치에 생성되었는지 확인<br>README.md 형식이 기존 파일들과 동일한지 확인<br>.vcxproj 파일이 올바르게 업데이트되었는지 확인                                         |
+| **7️⃣ vcxproj 업데이트** | `<None>` 섹션에 Answer.cpp.txt 추가<br>`<None>` 섹션에 README.md 추가<br>**⚠️ 중요: .cpp.txt는 `<None>` 태그 사용** (컴파일 제외)<br>알파벳순으로 정렬 유지                                                       |
+| **8️⃣ 파일명 확인** | Answer.cpp.txt 파일명이 올바른지 확인<br>`.cpp` 확장자가 아닌 `.cpp.txt` 확장자인지 검증 |
+| **9️⃣ 검증** | 모든 파일이 올바른 위치에 생성되었는지 확인<br>README.md 형식이 기존 파일들과 동일한지 확인<br>.vcxproj 파일이 올바르게 업데이트되었는지 확인                                         |
 
 <br>
 
@@ -341,10 +342,11 @@ int main()
 ✅ 2. solved.ac API로 난이도 확인
 ✅ 3. 기존 README 2개 읽어서 형식 파악
 ✅ 4. 폴더 생성 (올바른 티어로)
-✅ 5. Answer.cpp 작성 (Test.cpp 복사 + 스타일 정리)
+✅ 5. Answer.cpp.txt 작성 (Test.cpp 복사 + 스타일 정리)
 ✅ 6. README.md 작성 (기존 형식과 동일하게)
-✅ 7. Complete.vcxproj 업데이트
-✅ 8. 완료 메시지 출력
+✅ 7. Complete.vcxproj 업데이트 (.cpp.txt는 <None> 태그로)
+✅ 8. 파일명 .cpp.txt 확인
+✅ 9. 완료 메시지 출력
 ```
 
 > **⚠️ 주의사항**
@@ -487,14 +489,18 @@ Complete/백준/Bronze/B2_10808_알파벳개수/
 C:\Users\ASUS\Desktop\Code\CoTe\Coding-Test-Practice\Complete\Complete.vcxproj
 ```
 
-**📌 .cpp 파일 추가** - `<ItemGroup>` 내 `<ClCompile>` 섹션에 추가
+**📌 .cpp.txt 파일 추가** - `<ItemGroup>` 내 `<None>` 섹션에 추가
 ```xml
 <ItemGroup>
-  <ClCompile Include="백준\Bronze\B1_2309_일곱난쟁이\Answer(Combination).cpp" />
-  <ClCompile Include="백준\Bronze\B2_10808_알파벳개수\Answer.cpp" />  <!-- 새로 추가 -->
-  <ClCompile Include="백준\Gold\G4_12851_숨바꼭질2\Answer.cpp" />
+  <None Include="백준\Bronze\B1_2309_일곱난쟁이\Answer(Combination).cpp.txt" />
+  <None Include="백준\Bronze\B2_10808_알파벳개수\Answer.cpp.txt" />  <!-- 새로 추가 -->
+  <None Include="백준\Gold\G4_12851_숨바꼭질2\Answer.cpp.txt" />
 </ItemGroup>
 ```
+
+**⚠️ 중요: Complete 폴더는 `.cpp.txt` 확장자 사용**
+- Complete 폴더의 C++ 파일은 컴파일 대상이 아니므로 `<None>` 태그 사용
+- Test.cpp와의 변수명 충돌 방지를 위해 `.cpp.txt` 확장자로 저장
 
 **📌 README.md 파일 추가** - `<ItemGroup>` 내 `<None>` 섹션에 추가
 ```xml
@@ -510,11 +516,17 @@ C:\Users\ASUS\Desktop\Code\CoTe\Coding-Test-Practice\Complete\Complete.vcxproj
 
 | 파일 확장자 | XML 태그 | 용도 |
 |-----------|---------|------|
-| `.cpp` | `<ClCompile>` | C++ 소스 파일 (컴파일 대상) |
+| `.cpp.txt` | `<None>` | **C++ 소스 파일 (컴파일 제외)** - Complete 폴더 전용 |
+| `.cpp` | `<ClCompile>` | C++ 소스 파일 (컴파일 대상) - Test 폴더 전용 |
 | `.h`, `.hpp` | `<ClInclude>` | C++ 헤더 파일 |
 | `.md` | `<None>` | 문서 파일 (비컴파일) |
 | `.png`, `.jpg` | `<Content>` | 리소스 파일 |
-| `.txt` | `<Text>` | 텍스트 파일 |
+| `.txt` | `<None>` | 텍스트 파일 |
+
+**⚠️ 중요: Complete 폴더 전용 규칙**
+- Complete 폴더의 모든 C++ 파일은 `.cpp.txt` 확장자 사용
+- 이유: Test.cpp와의 변수명 충돌 방지 및 컴파일 대상에서 제외
+- Test 폴더는 일반 `.cpp` 확장자 사용 (실제 실행 및 테스트용)
 
 <br>
 
@@ -535,9 +547,9 @@ C:\Users\ASUS\Desktop\Code\CoTe\Coding-Test-Practice\Complete\Complete.vcxproj
 | 단계 | 작업 |
 |-----|------|
 | **1. 폴더 생성** | `powershell "New-Item -ItemType Directory -Path 'Complete\백준\Bronze\B2_문제명' -Force"` |
-| **2. 파일 작성** | Write tool 사용 (UTF-8 BOM 포함)<br>- Answer.cpp<br>- README.md |
-| **3. vcxproj 업데이트** | Edit tool로 Complete.vcxproj 수정<br>- `<ClCompile>` 섹션에 .cpp 추가<br>- `<None>` 섹션에 .md 추가<br>- 알파벳순으로 정렬 유지 |
-| **4. 검증** | Rider/Visual Studio에서 솔루션 탐색기 확인<br>새로 추가한 파일들이 표시되는지 확인 |
+| **2. 파일 작성** | Write tool 사용 (UTF-8 BOM 포함)<br>- **Answer.cpp.txt** (`.cpp.txt` 확장자!)<br>- README.md |
+| **3. vcxproj 업데이트** | Edit tool로 Complete.vcxproj 수정<br>- `<None>` 섹션에 .cpp.txt 추가 (컴파일 제외!)<br>- `<None>` 섹션에 .md 추가<br>- 알파벳순으로 정렬 유지 |
+| **4. 검증** | Rider/Visual Studio에서 솔루션 탐색기 확인<br>새로 추가한 파일들이 표시되는지 확인<br>**파일명이 .cpp.txt인지 재확인** |
 
 <br>
 
@@ -574,10 +586,8 @@ C:\Users\ASUS\Desktop\Code\CoTe\Coding-Test-Practice\Complete\Complete.vcxproj
 <Project>
   ...
   <ItemGroup>
-    <ClCompile Include="..." />  <!-- .cpp 파일들 -->
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..." />       <!-- .md 파일들 -->
+    <None Include="백준\Bronze\B2_10808_알파벳개수\Answer.cpp.txt" />  <!-- .cpp.txt 파일들 (컴파일 제외) -->
+    <None Include="백준\Bronze\B2_10808_알파벳개수\README.md" />      <!-- .md 파일들 -->
   </ItemGroup>
   <ItemGroup>
     <Content Include="..." />    <!-- 이미지 등 -->
@@ -585,6 +595,11 @@ C:\Users\ASUS\Desktop\Code\CoTe\Coding-Test-Practice\Complete\Complete.vcxproj
   ...
 </Project>
 ```
+
+**⚠️ 중요: Complete 프로젝트는 .cpp.txt 사용**
+- 모든 C++ 소스 파일은 `.cpp.txt` 확장자
+- `<None>` 태그로 컴파일 대상에서 제외
+- Test.cpp와의 변수명 충돌 완전 방지
 
 ---
 
