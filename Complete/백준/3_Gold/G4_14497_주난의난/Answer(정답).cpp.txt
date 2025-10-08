@@ -68,7 +68,7 @@ int main()
                 }
             }
         }
-
+        
         currentQ = temp;  // 현재 큐를 다음 큐로 교체
     }
 

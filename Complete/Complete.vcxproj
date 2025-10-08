@@ -154,37 +154,39 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <None Include="백준\Bronze\B1_2309_일곱난쟁이\Answer(Combination).cpp.txt" />
-    <None Include="백준\Bronze\B1_2309_일곱난쟁이\Answer(Permutation).cpp.txt" />
-    <None Include="백준\Bronze\B1_2309_일곱난쟁이\Answer(Recursive).cpp.txt" />
-    <None Include="백준\Bronze\B2_10808_알파벳개수\Answer(성공).cpp.txt" />
-    <None Include="백준\Bronze\B3_2979_트럭주차\Answer(정답).cpp.txt" />
-    <None Include="백준\Bronze\B3_10988_팰린드롬인지확인하기\Answer(성공).cpp.txt" />
-    <None Include="백준\Gold\G4_14497_주난의난\Answer(성공).cpp.txt" />
-    <None Include="백준\Gold\G4_14497_주난의난\Answer(정답).cpp.txt" />
-    <None Include="백준\Gold\G3_16637_괄호추가하기\Answer(정답).cpp.txt" />
-    <None Include="백준\Gold\G4_12851_숨바꼭질2\Answer(정답).cpp.txt" />
-    <None Include="백준\Gold\G4_13913_숨바꼭질4\Answer(메모리 초과 버전).cpp.txt" />
-    <None Include="백준\Gold\G4_13913_숨바꼭질4\Answer(성공).cpp.txt" />
-    <None Include="백준\Gold\G4_13913_숨바꼭질4\Answer(정답).cpp.txt" />
-    <None Include="백준\Gold\G4_14497_주난의난\README.md" />
-    <None Include="백준\Platinum\P5_17071_숨바꼭질5\Answer(정답).cpp.txt" />
+    <None Include="백준\1_Bronze\B1_2309_일곱난쟁이\Answer(Combination).cpp.txt" />
+    <None Include="백준\1_Bronze\B1_2309_일곱난쟁이\Answer(Permutation).cpp.txt" />
+    <None Include="백준\1_Bronze\B1_2309_일곱난쟁이\Answer(Recursive).cpp.txt" />
+    <None Include="백준\1_Bronze\B2_10808_알파벳개수\Answer(성공).cpp.txt" />
+    <None Include="백준\1_Bronze\B3_2979_트럭주차\Answer(정답).cpp.txt" />
+    <None Include="백준\1_Bronze\B3_10988_팰린드롬인지확인하기\Answer(성공).cpp.txt" />
+    <None Include="백준\2_Silver\S3_9996_한국이그리울땐서버에접속하지\Answer(성공).cpp.txt" />
+    <None Include="백준\3_Gold\G3_16637_괄호추가하기\Answer(정답).cpp.txt" />
+    <None Include="백준\3_Gold\G4_12851_숨바꼭질2\Answer(정답).cpp.txt" />
+    <None Include="백준\3_Gold\G4_13913_숨바꼭질4\Answer(메모리 초과 버전).cpp.txt" />
+    <None Include="백준\3_Gold\G4_13913_숨바꼭질4\Answer(성공).cpp.txt" />
+    <None Include="백준\3_Gold\G4_13913_숨바꼭질4\Answer(정답).cpp.txt" />
+    <None Include="백준\3_Gold\G4_14497_주난의난\Answer(성공).cpp.txt" />
+    <None Include="백준\3_Gold\G4_14497_주난의난\Answer(정답).cpp.txt" />
+    <None Include="백준\3_Gold\G4_14497_주난의난\README.md" />
+    <None Include="백준\4_Platinum\P5_17071_숨바꼭질5\Answer(정답).cpp.txt" />
     <None Include="해커 랭크\Easy\Easy30_Variable_Sized_Arrays(가변_크기_배열)\Answer(성공).cpp.txt" />
     <None Include="해커 랭크\Medium\Medium35_Attribute_Parser(속성_파서)\Answer(정답).cpp.txt" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="백준\Bronze\B1_2309_일곱난쟁이\README.md" />
-    <None Include="백준\Bronze\B2_10808_알파벳개수\README.md" />
-    <None Include="백준\Bronze\B3_2979_트럭주차\README.md" />
-    <None Include="백준\Bronze\B3_10988_팰린드롬인지확인하기\README.md" />
-    <None Include="백준\Gold\G4_13913_숨바꼭질4\README.md" />
-    <None Include="백준\Platinum\P5_17071_숨바꼭질5\README.md" />
+    <None Include="백준\1_Bronze\B1_2309_일곱난쟁이\README.md" />
+    <None Include="백준\1_Bronze\B2_10808_알파벳개수\README.md" />
+    <None Include="백준\1_Bronze\B3_2979_트럭주차\README.md" />
+    <None Include="백준\1_Bronze\B3_10988_팰린드롬인지확인하기\README.md" />
+    <None Include="백준\2_Silver\S3_9996_한국이그리울땐서버에접속하지\README.md" />
+    <None Include="백준\3_Gold\G4_13913_숨바꼭질4\README.md" />
+    <None Include="백준\4_Platinum\P5_17071_숨바꼭질5\README.md" />
     <None Include="해커 랭크\Easy\Easy30_Variable_Sized_Arrays(가변_크기_배열)\README.md" />
     <None Include="해커 랭크\Medium\Medium35_Attribute_Parser(속성_파서)\README.md" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="백준\Gold\G3_16637_괄호추가하기\README.md" />
-    <Content Include="백준\Gold\G4_12851_숨바꼭질2\README.md" />
+    <Content Include="백준\3_Gold\G3_16637_괄호추가하기\README.md" />
+    <Content Include="백준\3_Gold\G4_12851_숨바꼭질2\README.md" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="해커 랭크\Easy\" />

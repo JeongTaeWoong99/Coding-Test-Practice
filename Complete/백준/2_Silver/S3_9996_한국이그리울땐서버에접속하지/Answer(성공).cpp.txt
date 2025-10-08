@@ -1,0 +1,42 @@
+﻿#include<bits/stdc++.h>
+using namespace std;
+
+int    n;      // 파일 개수 (1 ≤ N ≤ 100)
+string s;      // 검사할 파일명
+string ori_s;  // 원본 패턴 문자열 (예: "h*n", "ab*cd")
+string pre;    // * 앞부분 문자열 (예: "h", "ab")
+string suf;    // * 뒷부분 문자열 (예: "n", "cd")
+
+int main()
+{
+    ios_base::sync_with_stdio(false);cin.tie(0);cout.tie(0);
+
+    cin >> n;
+    cin >> ori_s;
+
+    // * 위치 찾기 (ab*cd에서는 2번째에 위치 = pos = 2)
+    int pos = ori_s.find('*');
+
+    // 패턴을 * 기준으로 앞부분과 뒷부분으로 분리
+    pre = ori_s.substr(0, pos);      // substr(시작위치, 길이) : 0번 인덱스부터 pos개 문자 추출 (예: "abc*xyz" → "abc")
+    suf = ori_s.substr(pos + 1);     // substr(시작위치)      : pos+1번 인덱스부터 끝까지 추출 (예: "abc*xyz" → "xyz")
+
+    for(int i = 0; i < n; i++)
+    {
+        cin >> s;
+
+        // 파일명 길이가 (앞부분 + 뒷부분)보다 짧으면 매칭 불가
+        if(pre.size() + suf.size() > s.size())
+        {
+            cout << "NE\n";
+        }
+        else
+        {
+            // 파일명의 앞부분이 pre와 일치하고, 뒷부분이 suf와 일치하면 DA
+            if(pre == s.substr(0, pre.size()) && suf == s.substr(s.size() - suf.size())) cout << "DA\n";
+            else                                                                         cout << "NE\n";
+        }
+    }
+
+    return 0;
+}

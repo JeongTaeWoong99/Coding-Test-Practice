@@ -30,7 +30,8 @@
       "WebFetch(domain:justicehui.github.io)",
       "Bash(claude config set auto_approve_tools true)",
       "Bash(ren:*)",
-      "Bash(move:*)"
+      "Bash(move:*)",
+      "WebFetch(domain:velog.io)"
     ]
   },
   "outputStyle": "korean-terminal"
