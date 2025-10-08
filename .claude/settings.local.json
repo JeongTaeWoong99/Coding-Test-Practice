@@ -26,7 +26,11 @@
       "Bash(powershell:*)",
       "Bash(git ls-tree:*)",
       "Bash(findstr:*)",
-      "WebFetch(domain:solved.ac)"
+      "WebFetch(domain:solved.ac)",
+      "WebFetch(domain:justicehui.github.io)",
+      "Bash(claude config set auto_approve_tools true)",
+      "Bash(ren:*)",
+      "Bash(move:*)"
     ]
   },
   "outputStyle": "korean-terminal"
