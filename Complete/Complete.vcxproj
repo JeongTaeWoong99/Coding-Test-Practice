@@ -160,6 +160,7 @@
     <None Include="백준\1_Bronze\B2_10808_알파벳개수\Answer(성공).cpp.txt" />
     <None Include="백준\1_Bronze\B3_2979_트럭주차\Answer(정답).cpp.txt" />
     <None Include="백준\1_Bronze\B3_10988_팰린드롬인지확인하기\Answer(성공).cpp.txt" />
+    <None Include="백준\1_Bronze\B4_1159_농구경기\Answer.cpp.txt" />
     <None Include="백준\2_Silver\S3_9996_한국이그리울땐서버에접속하지\Answer(성공).cpp.txt" />
     <None Include="백준\3_Gold\G3_16637_괄호추가하기\Answer(정답).cpp.txt" />
     <None Include="백준\3_Gold\G4_12851_숨바꼭질2\Answer(정답).cpp.txt" />
@@ -179,6 +180,7 @@
     <None Include="백준\1_Bronze\B2_10808_알파벳개수\README.md" />
     <None Include="백준\1_Bronze\B3_2979_트럭주차\README.md" />
     <None Include="백준\1_Bronze\B3_10988_팰린드롬인지확인하기\README.md" />
+    <None Include="백준\1_Bronze\B4_1159_농구경기\README.md" />
     <None Include="백준\2_Silver\S3_9996_한국이그리울땐서버에접속하지\README.md" />
     <None Include="백준\3_Gold\G4_13913_숨바꼭질4\README.md" />
     <None Include="백준\4_Platinum\P5_17071_숨바꼭질5\README.md" />
