@@ -1,3 +1,6 @@
+// 백준 3197 - 백조의 호수
+// 난이도: Platinum 5
+//
 // 배열 R C (1 ≤ R, C ≤ 1500)
 // . = 물
 // X = 빙판
@@ -8,6 +11,7 @@
 // 2. 백조가 물을 따라 이동하다 빙판을 만나면 다음 날 탐색할 위치로 저장
 // 3. 물이 빙판과 인접하면 녹여서 물로 만듦
 // 4. 매일 반복하며 백조가 만날 때까지 진행
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -66,7 +70,7 @@ bool Move()
         int y = swanQ.front().first;
         int x = swanQ.front().second;
         swanQ.pop();
-        
+
         for (int i = 0; i < 4; i++)
         {
             int ny = y + dy[i];
@@ -104,11 +108,11 @@ int main()
 
     // 입력 처리(가로 세로 입력 상관없음 => 어짜피 탐색과 결과는 동일하기 때문...)
     cin >> R >> C;
-    
+
     for (int i = 0; i < R; i++)
     {
         cin >> tempS;
-        
+
         for (int j = 0; j < C; j++)
         {
             a[i][j] = tempS[j];
