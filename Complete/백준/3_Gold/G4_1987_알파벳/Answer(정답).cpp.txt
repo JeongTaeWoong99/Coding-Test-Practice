@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+﻿#include <bits/stdc++.h>
 using namespace std;
 
 // const 변수
@@ -30,7 +30,7 @@ void DFS(int y, int x, int cnt)
 
         // 다음 칸의 알파벳을 인덱스로 변환 (A = 0, B = 1, ...)
         int next = a[ny][nx] - 'A';
-        
+
         // 아직 방문하지 않은 알파벳이면
         if(alpaVisited[next] == 0)
         {
