@@ -1,66 +1,21 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// const 변수
-const int dy[] = {-1, 0, 1, 0};  // 상우하좌 방향 (y 좌표)
-const int dx[] = { 0, 1, 0, -1}; // 상우하좌 방향 (x 좌표)
-
-// 전역 변수
-int  R, C;            // R = 세로 크기, C = 가로 크기
-int  ret;             // 최대 이동 칸 수 (최대 결과값)
-int  ny, nx;          // 다음 탐색할 좌표
-int  alpaVisited[26]; // 알파벳 방문 체크 배열 (A ~ Z = 0 ~ 25)
-char a[21][21];       // 보드 배열
-
-// DFS + 백트래킹으로 최대 이동 칸 수 탐색
-// y, x = 현재 위치, cnt = 현재까지 이동한 칸 수
-void DFS(int y, int x, int cnt)
-{
-    ret = max(ret, cnt); // 최대값 갱신
-
-    // 4방향 탐색
-    for(int i = 0; i < 4; i++)
-    {
-        // 다음 좌표 계산
-        ny = y + dy[i];
-        nx = x + dx[i];
-
-        // 범위 체크
-        if(ny < 0 || ny >= R || nx < 0 || nx >= C) continue;
-
-        // 다음 칸의 알파벳을 인덱스로 변환 (A = 0, B = 1, ...)
-        int next = a[ny][nx] - 'A';
-        
-        // 아직 방문하지 않은 알파벳이면
-        if(alpaVisited[next] == 0)
-        {
-            alpaVisited[next] = 1;      // 방문 처리
-            DFS(ny, nx, cnt + 1); // 다음 칸으로 이동 (카운트 증가)
-            alpaVisited[next] = 0;      // 백트래킹: 방문 해제 (다른 경로 탐색을 위해)
-        }
-    }
-}
+string S, temp;
 
 int main()
 {
-    // R C 입력
-    cin >> R >> C;
-
-    // 보드 초기화
-    for(int i = 0; i < R; i++)
-    {
-        for(int j = 0; j < C; j++)
-        {
-            cin >> a[i][j];
-        }
+    // 공백 포함 입력
+    getline(cin, S); 
+    
+    for(int i = 0; i < S.length(); i++)
+    {        
+        if      (S[i] >= 'A' && S[i] <= 'Z') temp += ((S[i] - 'A' + 13) % 26 + 'A'); // 대문자
+        else if (S[i] >= 'a' && S[i] <= 'z') temp += ((S[i] - 'a' + 13) % 26 + 'a'); // 소문자
+        else                                 temp += S[i];                           // 공백 페스
     }
-
-    // 탐색 시작
-    alpaVisited[a[0][0] - 'A'] = 1; // 시작 위치(0,0)의 알파벳 방문 처리
-    DFS(0, 0, 1);       // DFS 시작 (시작 칸 포함하므로 cnt=1)
-
-    // 결과 출력
-    cout << ret << '\n';
-
+    
+    cout << temp;
+    
     return 0;
 }
