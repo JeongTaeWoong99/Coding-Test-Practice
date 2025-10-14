@@ -1,0 +1,33 @@
+// 누적합(Prefix Sum) 방식
+#include <bits/stdc++.h>
+using namespace std;
+
+// <맞왜틀 피하는 방법>
+// 2 ~ 100000 입력 -> psum[100001]
+// 입력되는 값의 범위 -100 이상 100 이하
+// ret 그러므로, 최대값은 -100 * 100000 = -1000000 부터 시작
+int n, k, temp, psum[100001], ret = -10000000;
+
+int main()
+{
+    ios_base::sync_with_stdio(false);cin.tie(0);cout.tie(0);
+
+    cin >> n >> k;
+
+    // 누적합 구하기
+    for (int i = 1; i <= n; i++)
+    {
+        cin >> temp;
+        psum[i] = psum[i - 1] + temp; // psum[i] = 0번째부터 i번째까지의 합
+    }
+
+    // 필요없는 부분 없애주기
+    for (int i = k; i <= n; i++)
+    {
+        // psum[i] - psum[i - k] = (i-k+1)번째부터 i번째까지 K개의 합
+        ret = max(ret, psum[i] - psum[i - k]);
+    }
+
+    cout << ret << "\n";
+    return 0;
+}

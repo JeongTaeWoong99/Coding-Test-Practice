@@ -1,0 +1,39 @@
+// N개 입력. K개 누적
+// 슬라이딩 윈도우(Sliding Window) 방식
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int N, K, sum = 0, maxSum;
+int arr[100000];
+
+int main()
+{
+    ios_base::sync_with_stdio(false);cin.tie(0);cout.tie(0);
+
+    cin >> N >> K;
+
+    // 입력 받기
+    for (int i = 0; i < N; i++)
+    {
+        cin >> arr[i];
+    }
+
+    // 처음 K개의 합 구하기
+    for (int i = 0; i < K; i++)
+    {
+        sum += arr[i];
+    }
+    maxSum = sum; // 초기 최대값 설정
+
+    // 슬라이딩 윈도우: K번째부터 N-1번째까지
+    for (int i = K; i < N; i++)
+    {
+        sum += arr[i];             // 새로운 원소 추가
+        sum -= arr[i - K];         // 맨 앞 원소 제거
+        maxSum = max(maxSum, sum); // 최대값 갱신
+    }
+
+    cout << maxSum << "\n";
+    return 0;
+}
