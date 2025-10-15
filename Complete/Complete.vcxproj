@@ -159,6 +159,7 @@
     <None Include="백준\1_Bronze\B1_2309_일곱난쟁이\Answer(Permutation).cpp.txt" />
     <None Include="백준\1_Bronze\B1_2309_일곱난쟁이\Answer(Recursive).cpp.txt" />
     <None Include="백준\1_Bronze\B2_10808_알파벳개수\Answer(성공).cpp.txt" />
+    <None Include="백준\1_Bronze\B3_2959_거북이\Answer.cpp.txt" />
     <None Include="백준\1_Bronze\B3_2979_트럭주차\Answer(정답).cpp.txt" />
     <None Include="백준\1_Bronze\B3_10988_팰린드롬인지확인하기\Answer(성공).cpp.txt" />
     <None Include="백준\1_Bronze\B4_1159_농구경기\Answer.cpp.txt" />
@@ -184,6 +185,7 @@
     <None Include="백준\1_Bronze\B1_11655_ROT13\README.md" />
     <None Include="백준\1_Bronze\B1_2309_일곱난쟁이\README.md" />
     <None Include="백준\1_Bronze\B2_10808_알파벳개수\README.md" />
+    <None Include="백준\1_Bronze\B3_2959_거북이\README.md" />
     <None Include="백준\1_Bronze\B3_2979_트럭주차\README.md" />
     <None Include="백준\1_Bronze\B3_10988_팰린드롬인지확인하기\README.md" />
     <None Include="백준\1_Bronze\B4_1159_농구경기\README.md" />

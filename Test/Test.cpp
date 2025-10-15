@@ -1,64 +1,20 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int            K;         // 부등호 개수
-bool           use[10];   // 0 ~ 9 숫자 사용 여부 체크 (true = 사용중, false = 미사용)
-char           arr[20];   // 부등호 기호 배열 ('<' 또는 '>')
-vector<string> results;   // 모든 유효한 숫자 조합을 저장하는 벡터
-
-// 두 숫자가 주어진 부등호 조건을 만족하는지 확인하는 함수
-// A : 왼쪽 숫자(문자), B : 오른쪽 숫자(문자), op : 부등호 기호
-bool OperCheck(char A, char B, char op)
-{
-    if (A < B && op == '<') return true; // A < B 이고 부등호가 '<'면 참
-    if (A > B && op == '>') return true; // A > B 이고 부등호가 '>'면 참
-    return false;                        // 그 외는 거짓
-}
-
-// 백트래킹으로 모든 경우의 수를 탐색하는 재귀 함수
-// idx       : 현재 채울 위치 (0부터 n까지, 총 n+1개 숫자)
-// numString : 현재까지 만든 숫자 문자열
-void Recursion(int idx, string numString)
-{
-    // 기저 사례 : n+1개의 숫자를 모두 채웠을 때
-    if (idx == K + 1)
-    {
-        results.push_back(numString); // 유효한 조합을 결과 벡터에 저장
-        return;
-    }
-
-    // 0부터 9까지 모든 숫자를 시도
-    for (int i = 0; i <= 9; i++)
-    {
-        if (use[i]) continue; // 이미 사용한 숫자는 건너뛰기
-
-        // 첫 번째 숫자이거나, 이전 숫자와 부등호 조건을 만족하는 경우
-        if (idx == 0 || OperCheck(numString[idx - 1], i + '0', arr[idx - 1]))
-        {
-            use[i] = true;                                // 현재 숫자 사용 표시
-            Recursion(idx + 1, numString + to_string(i)); // 다음 위치로 재귀 호출
-            use[i] = false;                               // 백트래킹 : 숫자 사용 해제
-        }
-    }
-    return;
-}
+int         temp;
+vector<int> v;
 
 int main()
 {
-    ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
+    for (int i = 0; i < 4; i++)
+    {
+        cin >> temp;
+        v.emplace_back(temp);
+    }
 
-    // 부등호 개수 입력
-    cin >> K;
+    sort(v.begin(),v.end());
 
-    // 부등호 기호들 입력받기
-    for (int i = 0; i < K; i++) cin >> arr[i];
+    cout << v[0] * v[2];
 
-    // 백트래킹 시작 (0번 위치부터, 빈 문자열로 시작)
-    Recursion(0, "");
-
-    // 결과를 사전순으로 정렬 (문자열 비교)
-    sort(results.begin(), results.end());
-
-    // 최댓값(마지막)과 최솟값(첫번째) 출력
-    cout << results[results.size() - 1] << "\n" << results[0] << "\n";
+    return 0;
 }
