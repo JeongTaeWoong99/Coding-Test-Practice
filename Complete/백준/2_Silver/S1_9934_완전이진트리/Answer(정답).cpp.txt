@@ -1,0 +1,62 @@
+// 백준 9934번: 완전 이진 트리
+// 중위 순회(Inorder Traversal) 결과가 주어질 때, 레벨별로 노드 출력
+// 핵심: 중위 순회에서 배열의 중앙값이 항상 루트 노드
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int         n;
+int         a[1030];
+vector<int> ret[14];
+
+// _start : 배열의 시작 인덱스, _end : 배열의 끝 인덱스, level : 현재 트리 레벨
+void go(int _start, int _end, int level)
+{
+    // 범위가 유효하지 않으면 종료 (base case)
+    if(_start > _end) return;
+
+    // 범위가 단일 요소일 때 처리
+    if(_start == _end)
+    {
+        ret[level].push_back(a[_start]);
+        return;
+    }
+
+    // 중위 순회의 핵심: 중앙값이 현재 서브트리의 루트
+    int _mid = (_start + _end) / 2;
+    ret[level].push_back(a[_mid]);
+
+    // 왼쪽 서브트리 재귀 (_start ~ _mid-1 범위)
+    go(_start  ,  _mid - 1, level + 1);
+
+    // 오른쪽 서브트리 재귀 (_mid+1 ~ _end 범위)
+    go(_mid + 1, _end     , level + 1);
+}
+
+int main()
+{
+    // 트리 깊이 입력
+    cin >> n;
+
+    // 노드 개수 계산 (2^n - 1)
+    int _end = (int)pow(2, n) - 1;
+
+    // 중위 순회 결과 입력
+    for(int i = 0; i < _end; i++)
+        cin >> a[i];
+
+    // 재귀 시작: 전체 배열 범위(0 ~ _end-1), 레벨 1부터
+    go(0, _end - 1, 1);
+
+    // 레벨별 출력
+    for(int i = 1; i <= n; i++)
+    {
+        for(int j : ret[i])
+        {
+            cout << j << " ";
+        }
+        cout << "\n";
+    }
+
+    return 0;
+}
