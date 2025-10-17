@@ -1,0 +1,67 @@
+﻿#include <bits/stdc++.h>
+using namespace std;
+
+string s, front, back, mid;
+int    arr[26];
+bool   flag;
+
+int main(int argc, char* argv[])
+{
+    ios_base::sync_with_stdio(false);cin.tie(0);cout.tie(0);
+
+    cin >> s;
+
+    // 알파벳 카운트
+    for (int i = 0; i < s.length(); i++)
+    {
+        arr[s[i] - 'A']++;
+    }
+
+    // 홀수개 체크
+    for (int i = 0; i < 26; i++)
+    {
+        // 홀수개가 있으면
+        if (arr[i] % 2 == 1)
+        {
+            // 맨처음 발견한 홀수는 가능 = 중간값 저장
+            if (mid.empty())
+            {
+                mid += (char)(i + 'A');
+                arr[i]--;
+            }
+            // 이미 중간값이 있는데, 또 홀수개 발견 = 불가능
+            else
+            {
+                flag = true;
+                break;
+            }
+        }
+    }
+
+    // 홀수 체크 후 flag가 true면 종료
+    if (flag)
+    {
+        cout << "I'm Sorry Hansoo";
+        return 0;
+    }
+
+    // 짝수개들을 절반씩 나눠서 앞뒤에 배치
+    for (int i = 0; i < 26; i++)
+    {
+        if (arr[i] > 0)
+        {
+            // 절반씩 앞뒤에 배치
+            for (int j = 0; j < arr[i] / 2; j++)
+            {
+                front += (char)(i + 'A');
+                back  += (char)(i + 'A');
+            }
+        }
+    }
+
+    reverse(back.begin(), back.end());
+
+    cout << front << mid << back << '\n';
+
+    return 0;
+}

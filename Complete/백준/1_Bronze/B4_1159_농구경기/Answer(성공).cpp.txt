@@ -1,0 +1,25 @@
+﻿#include<bits/stdc++.h>
+using namespace std;
+
+int    n, cnt[26];       // n = 선수 수, cnt = 각 알파벳 카운팅 배열
+string temp, ret;        // temp = 입력받는 이름, ret = 결과 문자열
+
+int main()
+{
+    cin >> n;
+
+    for(int i = 0; i < n; i++)
+    {
+        cin >> temp;
+        cnt[temp[0] - 'a']++;  // 성의 첫 글자를 배열 인덱스로 변환하여 카운팅(char - char = int)
+    }
+
+    for(int i = 0; i < 26; i++)
+    {
+        if(cnt[i] >= 5)
+            ret += i + 'a';    // i + 'a'는 int 타입이지만, string의 += 연산자가 char로 자동 변환하여 문자로 추가됨
+    }
+
+    if(!ret.empty()) cout << ret       << "\n";
+    else             cout << "PREDAJA" << "\n";
+}
