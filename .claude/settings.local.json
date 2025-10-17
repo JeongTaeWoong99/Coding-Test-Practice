@@ -31,7 +31,8 @@
       "Bash(claude config set auto_approve_tools true)",
       "Bash(ren:*)",
       "Bash(move:*)",
-      "WebFetch(domain:velog.io)"
+      "WebFetch(domain:velog.io)",
+      "Bash(.test.exe)"
     ]
   },
   "outputStyle": "korean-terminal"
