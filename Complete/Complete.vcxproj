@@ -215,6 +215,7 @@
     <Content Include="백준\3_Gold\G4_12851_숨바꼭질2\README.md" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="백준\Gold\" />
     <Folder Include="해커 랭크\Easy\" />
     <Folder Include="해커 랭크\Medium\" />
   </ItemGroup>
